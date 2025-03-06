@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "outDir": "dist",
+    // 📌추론되지않는 변수의 타입을 명시하지않으면 오류발생됨
+    "strict": true,
+    "moduleDetection": "force"
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src"]
+}
