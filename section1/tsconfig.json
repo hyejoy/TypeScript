@@ -5,7 +5,8 @@
     "module": "ESNext",
     "outDir": "dist",
     // 📌추론되지않는 변수의 타입을 명시하지않으면 오류발생됨
-    "strict": true,
+    "strict": false,
+    // 📌 파일을 전역모듈 취급 -> 로컬(독립)모듈로 취급
     "moduleDetection": "force"
   },
   "ts-node": {
