@@ -3,9 +3,10 @@
     "target": "ESNext",
     "skipLibCheck": true,
     "module": "ESNext",
+    // 📌 컴파일되는 파일은 해당 폴더로 저장함
     "outDir": "dist",
     // 📌추론되지않는 변수의 타입을 명시하지않으면 오류발생됨
-    "strict": false,
+    "strict": true,
     // 📌 파일을 전역모듈 취급 -> 로컬(독립)모듈로 취급
     "moduleDetection": "force"
   },
