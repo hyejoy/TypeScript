@@ -4,7 +4,10 @@
     "target": "ESNext",
     "module": "ESNext",
     "outDir": "dist",
+    // strict는 strictNullChekcs의 상위 옵션
     "strict": true,
+    //📌 null 타입이 아닌 변수에 null 값을 할당 허용
+    "strictNullChecks": true,
     "moduleDetection": "force"
   },
   "ts-node": { "esm": true }
