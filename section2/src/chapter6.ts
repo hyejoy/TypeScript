@@ -12,7 +12,7 @@ anyVar = () => {};
 anyVar.toUpperCase();
 anyVar.toFixed();
 
-// 반대로 모든 타입의 변수에 다 AnyType의 값을 집어 넣을 수도 있다.
+// 반대로 모든 타입의 변수에 다 AnyType의 값을 집어 넣을 수도 있다. [컴파일 오류의 원인]
 let num: number = 20;
 num = anyVar;
 

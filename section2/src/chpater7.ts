@@ -11,7 +11,7 @@ function func2(): void {
   console.log("hello");
 }
 
-/** 오직 undefined만 넣을수 있다.
+/** 변수의 void 타입은 오직 undefined만 넣을수 있다.
  * stricNullChecks 옵션 false로 바꾸면 null도 넣을 수 있음.*/
 let a: void;
 // a = 1;

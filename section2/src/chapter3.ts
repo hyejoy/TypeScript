@@ -1,5 +1,3 @@
-import { LargeNumberLike } from "crypto";
-
 // object
 let user1: Object = {
   id: 1,
