@@ -11,11 +11,11 @@
 
 interface IPerson {
   readonly name: string;
-  age?: number;
-  sayHi: () => void; // 함수타입 표현식
+  age?: number; // optional 프로퍼티 가능
   /**
    * 💡 함수 오버로딩 하고싶으면 함수타입 표현식이 아닌 호출 시그니처를 사용해야한다.
    */
+  sayHi: () => void; // 함수타입 표현식
   sayHi2(): void; // 호출 시그니처
   sayHi2(a: number, b: number): void;
 }
@@ -26,7 +26,7 @@ const person: IPerson = {
   sayHi: function () {
     console.log("say Hi!");
   },
-  sayHi2() {
+  sayHi2(a?: number, b?: number) {
     console.log("say Hi2!");
   },
 };
