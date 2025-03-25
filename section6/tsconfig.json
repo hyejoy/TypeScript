@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "moduleDetection": "force",
+    "allowJs": true /*src 폴더에 Js 파일도 허용*/
+  },
+  "ts-node": {
+    "esm": true
+  }
+}
