@@ -37,8 +37,8 @@ employee.position = "진돗개";
  * private ▶ 사적인
  * protected
  * name 프로퍼티는 private 이기때문에, 값을 수정할 수 없고, employee 클래스 내에서만 엑세스할 수 있다.
- * private는 파생 클래스에서도 접근이 불가능하기 때문에, 파생 클래스에서는 접근이 가능하도록 하고싶으면
- * protected 접근제어자를 쓰면 된다.
+ * private는 파생 클래스에서도 접근이 불가능하기 때문에,
+ * 파생 클래스에서는 접근이 가능하도록 하고싶으면 protected 접근제어자를 쓰면 된다.
  */
 
 class ExecutiveOfficer extends Employee {
@@ -68,17 +68,14 @@ class ExecutiveOfficer extends Employee {
 }
 
 /**
- * 🏷 생성자에 접근제어자를 붙히면, 필드정의는 생략해줘야한다.
+ * 🏷 생성자에 접근제어자를 붙히면, 필드정의는 생략가능하며,
+ *    값도 자동 할당된다.
  */
 
 class TestClass {
   constructor(
-    private name: string,
-    protected age: number,
-    public position: string
-  ) {
-    this.name = name;
-    this.age = age;
-    this.position = position;
-  }
+    private name: string, // ✅ 자동으로 this.name 선언 + 할당
+    protected age: number, // ✅ 자동으로 this.age 선언 + 할당
+    public position: string // ✅ 자동으로 this.position 선언 + 할당
+  ) {}
 }
