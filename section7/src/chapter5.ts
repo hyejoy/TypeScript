@@ -2,12 +2,10 @@
  * 프로미스
  *
  * 프로미스는 리졸브나 리젝트를 호출해서 전달하는 비동기의
- * 작업의 결과값을 자동으로 출현할수있는 기능을가지고 잇찌않아 unknown으로 추론함
+ * 작업의 결과값을 자동으로 출현할수있는 기능을 가지고 있지않아서 unknown으로 추론함
  *
  * Generic을 활용해서 Promise 객체의 타입을 정의하는 방법에 대해 살펴보자
  */
-
-import { resolve } from "path";
 
 // 비동기의 결과값이 number임을 알려줌
 const promise = new Promise<number>((resolve, reject) => {
