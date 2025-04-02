@@ -32,6 +32,13 @@ updateUser({
   age: 25,
 });
 
+// 아니 그렇다구 이렇게 옵셔널 프로퍼티로 다 만들어줘야돼? NO!!
+interface test {
+  id?: number;
+  name?: string;
+  age?: number;
+}
+
 type PertialUser = {
   // 인덱스 시그니처와 다르게 : 대신 in을 사용하고,
   // 우측엔 value 타입을 정의하는 부분에서 인덱시드 엑세스 타입
