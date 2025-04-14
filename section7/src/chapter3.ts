@@ -98,7 +98,6 @@ function goToSchool(user: User<Student>) {
   //     console.log("잘 못 오셨습니다");
   //     return;
   //   }
-
   const school = user.profile.school;
   console.log(`${school}로 등교 완료`);
 }
