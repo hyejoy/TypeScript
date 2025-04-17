@@ -1,4 +1,4 @@
-import { ReactElement, useRef, useState } from "react";
+import { ReactElement, useState } from "react";
 
 interface Props {
   onClickAdd: (text: string) => void;
