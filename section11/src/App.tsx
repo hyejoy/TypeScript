@@ -1,26 +1,38 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import "./App.css";
 import Editor from "./components/Editor";
 import TodoItem from "./components/TodoItem";
-import { Todo } from "./types";
+import { Action, Todo } from "./types";
+
+function reducer(state: Todo[], action: Action) {
+  switch (action.type) {
+    case "CREATE":
+      return [...state, action.data];
+
+    case "DELETE":
+      return state.filter((item) => item.id !== action.id);
+  }
+}
 
 function App() {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, dispatch] = useReducer(reducer, []);
   const idRef = useRef(0);
 
   const onClickAdd = (text: string) => {
-    setTodos([
-      ...todos,
-      {
+    dispatch({
+      type: "CREATE",
+      data: {
         id: idRef.current++,
         content: text,
       },
-    ]);
+    });
   };
 
   const onClickDelete = (id: number) => {
-    const todoList = todos.filter((todo) => todo.id !== id);
-    setTodos(todoList);
+    dispatch({
+      type: "DELETE",
+      id: id,
+    });
   };
 
   useEffect(() => {
