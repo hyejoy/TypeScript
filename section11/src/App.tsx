@@ -1,13 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Editor from "./components/Editor";
+import TodoItem from "./components/TodoItem";
+import { Todo } from "./types";
 
-//250417
 function App() {
-  interface Todo {
-    id: number;
-    content: string;
-  }
   const [todos, setTodos] = useState<Todo[]>([]);
   const idRef = useRef(0);
 
@@ -21,6 +18,11 @@ function App() {
     ]);
   };
 
+  const deleteTodo = (id: number) => {
+    const todoList = todos.filter((todo) => todo.id !== id);
+    setTodos(todoList);
+  };
+
   useEffect(() => {
     console.log(todos);
   }, [todos]);
@@ -29,8 +31,9 @@ function App() {
     <div className="App">
       <h1>Todo</h1>
       <Editor onClickAdd={onClickAdd}>
-        <div>추가추가!</div>
+        <div>추가</div>
       </Editor>
+      <TodoItem todos={todos} deleteTodo={deleteTodo} />
     </div>
   );
 }

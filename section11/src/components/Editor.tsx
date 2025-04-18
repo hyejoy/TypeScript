@@ -24,7 +24,13 @@ const Editor = (props: Props) => {
 
   return (
     <div>
-      <input value={text} onChange={onChangeInput} />
+      <input
+        value={text}
+        onChange={onChangeInput}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") onClickAdd();
+        }}
+      />
       <button onClick={onClickAdd}>{props.children}</button>
     </div>
   );
