@@ -18,7 +18,7 @@ function App() {
     ]);
   };
 
-  const deleteTodo = (id: number) => {
+  const onClickDelete = (id: number) => {
     const todoList = todos.filter((todo) => todo.id !== id);
     setTodos(todoList);
   };
@@ -33,7 +33,13 @@ function App() {
       <Editor onClickAdd={onClickAdd}>
         <div>추가</div>
       </Editor>
-      <TodoItem todos={todos} deleteTodo={deleteTodo} />
+      {todos.map((todo) => (
+        <TodoItem
+          id={todo.id}
+          content={todo.content}
+          onClickDelete={onClickDelete}
+        />
+      ))}
     </div>
   );
 }

@@ -1,23 +1,20 @@
 import { Todo } from "../types";
 
-interface Props {
-  todos: Todo[];
-  deleteTodo: (id: number) => void;
+interface Props extends Todo {
+  onClickDelete: (id: number) => void;
 }
 
-const List = (props: Props) => {
+const TodoItem = (props: Props) => {
+  const onClickButton = () => {
+    props.onClickDelete(props.id);
+  };
+
   return (
     <div>
-      <ul>
-        {props.todos.map((todo) => (
-          <div className="todoList">
-            <li>{todo.content}</li>
-            <button onClick={() => props.deleteTodo(todo.id)}>삭제</button>
-          </div>
-        ))}
-      </ul>
+      {props.id}번 : {props.content}
+      <button onClick={onClickButton}>삭제</button>
     </div>
   );
 };
 
-export default List;
+export default TodoItem;
