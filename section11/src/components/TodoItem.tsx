@@ -1,12 +1,15 @@
+import { useContext } from "react";
+import { TodoStateContext, useTodoDispatch } from "../App";
 import { Todo } from "../types";
 
-interface Props extends Todo {
-  onClickDelete: (id: number) => void;
-}
+interface Props extends Todo {}
 
 const TodoItem = (props: Props) => {
+  const dispatch = useTodoDispatch();
+  const todoState = useContext(TodoStateContext);
+
   const onClickButton = () => {
-    props.onClickDelete(props.id);
+    dispatch.onClickDelete(props.id);
   };
 
   return (

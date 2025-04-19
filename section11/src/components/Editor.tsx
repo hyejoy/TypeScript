@@ -1,11 +1,15 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useContext, useState } from "react";
+import { TodoDispatchContext, useTodoDispatch } from "../App";
 
 interface Props {
-  onClickAdd: (text: string) => void;
-  children: ReactElement;
+  children?: ReactElement;
 }
 
 const Editor = (props: Props) => {
+  // const dispatch = useContext(TodoDispatchContext);
+  // 이렇게 불러오면 dispatch가 널일수도 있기때문에 커스텀훅 이용하여 부르기
+  const dispatch = useTodoDispatch();
+
   // 초기값으로 설정할 값이 없는경우 변수타입을 직접 설정해줘야한다.
   // const [text, setText] = useState<string>();
 
@@ -18,7 +22,7 @@ const Editor = (props: Props) => {
   };
 
   const onClickAdd = () => {
-    props.onClickAdd(text);
+    dispatch.onClickAdd(text);
     setText("");
   };
 
