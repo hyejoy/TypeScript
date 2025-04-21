@@ -1,0 +1,1 @@
+npx crate-react-app . --template typescript
