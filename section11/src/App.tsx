@@ -61,7 +61,7 @@ function App() {
       <h1>Todo</h1>
       <TodoStateContext.Provider value={todos}>
         <TodoDispatchContext.Provider value={{ onClickAdd, onClickDelete }}>
-          <Editor></Editor>
+          <Editor />
           {todos.map((todo) => (
             <TodoItem id={todo.id} content={todo.content} />
           ))}
